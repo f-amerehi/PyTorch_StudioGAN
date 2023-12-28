@@ -5,5 +5,5 @@
 
 # Compute FID for two folders
 ```bash
-python "./src/evaluate.py" -metrics fid --dset1 "C:\datasets\light\cifar10-image-folder\train" --dset2 "./output/DCGAN/samples/CIFAR10-DCGAN-train-2022_01_11_20_32_07/fake"
+python "./src/evaluate.py" -metrics fid --dset1 "C:\datasets\light\cifar10-image-folder\train" --dset2 "./output/DCGAN/samples/CIFAR10-DCGAN-train-2022_01_11_20_32_07/fake" --eval_backbone InceptionV3_torch
 ```

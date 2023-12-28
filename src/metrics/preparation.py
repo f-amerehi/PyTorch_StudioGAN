@@ -57,6 +57,11 @@ class LoadEvalModel(object):
             self.model = torch.hub.load(model_versions[self.eval_backbone],
                                         model_names[self.eval_backbone],
                                         pretrained=True)
+
+            # self.model.fc = nn.Linear(self.model.fc.in_features, 1019)
+            # checkpoint = torch.load('C:/Projects/Customized-FD/checkpoints/vf_Distortion_model_params.pt')
+            # self.model.load_state_dict(checkpoint)
+
             if self.eval_backbone == "SwAV_torch":
                 linear_state_dict = load_state_dict_from_url(SWAV_CLASSIFIER_URL, progress=True)["state_dict"]
                 linear_state_dict = {k.replace("module.linear.", ""): v for k, v in linear_state_dict.items()}
